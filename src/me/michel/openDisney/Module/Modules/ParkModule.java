@@ -4,7 +4,6 @@ import me.michel.openDisney.Module.Module;
 
 public class ParkModule implements Module {
 
-
     @Override
     public void load() {
 

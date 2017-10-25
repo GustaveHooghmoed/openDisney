@@ -34,8 +34,8 @@ public class Core extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         world = Bukkit.getWorld("world");
-        moduleMan = new ModuleManager();
         mySQLMan = new MySQLManager();
+        moduleMan = new ModuleManager();
     }
 
     @Override
