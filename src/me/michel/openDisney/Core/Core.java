@@ -1,0 +1,37 @@
+package me.michel.openDisney.Core;
+
+import me.michel.openDisney.Module.ModuleManager;
+import org.bukkit.Bukkit;
+import org.bukkit.World;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class Core extends JavaPlugin {
+
+    public static Plugin plugin = null;
+    public static World world = null;
+    public static ModuleManager moduleMan = null;
+
+    public static Plugin getPlugin() {
+        return plugin;
+    }
+
+    public static World getWorld() {
+        return world;
+    }
+
+    @Override
+    public void onEnable() {
+        plugin = this;
+        world = Bukkit.getWorld("world");
+        moduleMan = new ModuleManager();
+    }
+
+    @Override
+    public void onDisable() {
+        moduleMan.unloadModules();
+        world = null;
+        plugin = null;
+    }
+
+}
